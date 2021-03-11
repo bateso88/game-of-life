@@ -26,8 +26,7 @@ class Game {
     this.startingGrid = startingGrid
     this.width = this.startingGrid[0].length
     this.height = this.startingGrid.length
-    this.nextGrid = []
-    this._setNextGridToAGridOfZerosTheSameSizeAndShape()
+    this._setNextGrid()
   }
 
   tick() {
@@ -69,7 +68,7 @@ class Game {
     }
   }
 
-  _setNextGridToAGridOfZerosTheSameSizeAndShape() {
+  _setNextGrid() {
     this.nextGrid = [this.height]
     this._createEmptyArray()
     this._fillArrayWithZeros()
@@ -77,6 +76,6 @@ class Game {
 
   _updateGrids() {
     this.startingGrid = this.nextGrid.slice(0)
-    this._setNextGridToAGridOfZerosTheSameSizeAndShape()
+    this._setNextGrid()
   }
 }
