@@ -32,11 +32,7 @@ class Game {
   tick() {
     for(let row=0; row<this.height; row++) {
       for(let column=0; column<this.width; column++ ) {
-        if(this._countLiveNeighbours(row, column) == 2) {
-          this.nextGrid[row][column]=1;
-        } else {
-          this.nextGrid[row][column]=0;
-        }
+        this._updateCell(row, column)
       }
     }
     this._updateGrids()
@@ -76,6 +72,14 @@ class Game {
 
   _updateGrids() {
     this.startingGrid = this.nextGrid.slice(0)
-    this._setNextGrid()
+    // this._setNextGrid()
+  }
+
+  _updateCell(row, column) {
+    if(this._countLiveNeighbours(row, column) == 2) {
+      this.nextGrid[row][column]=1;
+    } else {
+      this.nextGrid[row][column]=0;
+    }
   }
 }
