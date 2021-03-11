@@ -26,13 +26,13 @@ describe("Game", function() {
       game.tick()
     });
     it("live cells with no live neighbours die", function() {
-      expect(game.nextGrid[4][4]).toEqual(0)
+      expect(game.startingGrid[4][4]).toEqual(0)
     });
     it("live cells with one live neighbour die", function() {
-      expect(game.nextGrid[2][1]).toEqual(0)
+      expect(game.startingGrid[2][1]).toEqual(0)
     });
     it("live cells with two live neighbours stay alive", function() {
-      expect(game.nextGrid[2][2]).toEqual(1)
+      expect(game.startingGrid[2][2]).toEqual(1)
     });
   });
 

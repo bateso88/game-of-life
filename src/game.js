@@ -40,6 +40,7 @@ class Game {
         }
       }
     }
+    this._updateGrids()
   }
 
   _countLiveNeighbours(y, x) {
@@ -74,13 +75,8 @@ class Game {
     this._fillArrayWithZeros()
   }
 
-  // _updateGrids() {
-  //   for(let row=0; row<this.height; row++) {
-  //     for(let column=0; column<this.width; column++) {
-  //       this.startingGrid[row][column] = this.nextGrid[row][column];
-  //       this.nextGrid[row][column] = 0;
-  //     }
-  //   }
-  // }
-
+  _updateGrids() {
+    this.startingGrid = this.nextGrid.slice(0)
+    this._setNextGridToAGridOfZerosTheSameSizeAndShape()
+  }
 }
