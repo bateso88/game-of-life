@@ -26,4 +26,12 @@ class Game {
     this.startingGrid = startingGrid
   }
 
+  tick() {
+    for(let row=0; row<this.startingGrid.length; row++) {
+      for(let column=0; column<this.startingGrid[0].length; column++ ) {
+        this.startingGrid[row][column]=0;
+      }
+    }
+  }
+
 }
