@@ -22,4 +22,9 @@ Write code that is capable of calculating each new generation, given a starter b
 # Getting Started
 To run tests:
 
-`open SpecRuner.html`
+`open SpecRunner.html`
+
+# Planning 
+1. TDD a Game class with a function 'tick' to hold all the logic outlined above.
+2. Create an index.html file to display the grid on the browser.
+3. Create in interface.js to file to make the browser update asyncronously (with jQuery) 
