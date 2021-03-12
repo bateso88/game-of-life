@@ -76,7 +76,9 @@ class Game {
   }
 
   _updateCell(row, column) {
-    if(this._countLiveNeighbours(row, column) == 2) {
+    if(this._countLiveNeighbours(row, column) === 3) {
+      this.nextGrid[row][column]=1;
+    } else if(this._countLiveNeighbours(row, column) === 2) {
       this.nextGrid[row][column]=1;
     } else {
       this.nextGrid[row][column]=0;

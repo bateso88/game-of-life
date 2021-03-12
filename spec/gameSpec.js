@@ -3,8 +3,8 @@
 describe("Game", function() {
   let customStartingGrid = [ 
     [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 1, 1, 1, 0],
+    [0, 0, 0, 1, 0],
+    [0, 1, 1, 1, 1],
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 1],
   ];
@@ -33,6 +33,12 @@ describe("Game", function() {
     });
     it("live cells with two live neighbours stay alive", function() {
       expect(game.startingGrid[2][2]).toEqual(1)
+    });
+    it("live cells with three live neighbours stay alive", function() {
+      expect(game.startingGrid[3][2]).toEqual(1)
+    });
+    it("dead cells with three live neighbours come alive", function() {
+      expect(game.startingGrid[2][3]).toEqual(1)
     });
   });
 
