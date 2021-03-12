@@ -7,8 +7,18 @@
   <link rel="stylesheet" href='index.css'>
 </head>
 <body>
-  <h1 id='heading'>Welcome to the Game of Life!</h1>
-  <div id='container'></div>
+  <div id='root'>
+    <div id='container'>
+      <h1 id='heading'>Welcome to the Game of Life!</h1>
+      <h5 id='instructions'><i>Select cells then click evolve</i></h5>
+    </div>
+    <div id='button-container'>
+      <div id='evolve-btn'>
+        <input type='button' value='Evolve' onclick='evolve()'>
+      </div>
+    </div>
+  </div>  
+  
 
   <script src="src/game.js"></script>
   <script src="src/interface.js"></script>
