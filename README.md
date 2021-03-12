@@ -31,15 +31,17 @@ To open the User Interface (UI):
 # Planning 
 1. TDD a Game class with a function 'tick' to hold all the logic outlined above.
 2. Create an index.html file to display the grid on the browser.
-3. Create in interface.js to file to make the browser update asyncronously (with jQuery) 
+3. Create an interface.js to file to make the browser update asyncronously (with jQuery) 
 
 # Approach
 
 ##### My approach to designing this solution was as follows:  
 1. Planning 
-  - I did the above planning in advance of writing any code.
-2. TDD
-  - I started writing code using TDD. I worked my way through the different requirements by writing tests, passing them and refactoring. 
+  - I did the above planning before writing any code.
+2. Game class
+  - I wrote the Game class code using TDD. I worked my way through the different requirements by writing tests, passing them and refactoring. 
+3. Create a UI for the browser. 
+4. Link the UI to the Game class to access its logic. 
 
 ### Comments 
 - In retrospect, I would have approached this task differently. I would have started with the UI and interface.js. From there, I would let the UI inform how I wanted to structure the game class. I had orginially planned to have one instance of the game class and each time the button was clicked, game.tick() would be called. However it became clear (after creating the UI) that it would be simpler to create a new instance of game with each click.  
