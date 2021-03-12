@@ -40,6 +40,9 @@ describe("Game", function() {
     it("dead cells with three live neighbours come alive", function() {
       expect(game.startingGrid[2][3]).toEqual(1)
     });
+    it("dead cells with two live neighbours stay dead", function() {
+      expect(game.startingGrid[1][1]).toEqual(0)
+    });
   });
 
 });

@@ -35,7 +35,7 @@ class Game {
         this._updateCell(row, column)
       }
     }
-    this._updateGrids()
+    this._updateStartingGrid()
   }
 
   _countLiveNeighbours(y, x) {
@@ -70,15 +70,15 @@ class Game {
     this._fillArrayWithZeros()
   }
 
-  _updateGrids() {
+  _updateStartingGrid() {
     this.startingGrid = this.nextGrid.slice(0)
-    // this._setNextGrid()
   }
 
   _updateCell(row, column) {
+    let cell = this.startingGrid[row][column]
     if(this._countLiveNeighbours(row, column) === 3) {
       this.nextGrid[row][column]=1;
-    } else if(this._countLiveNeighbours(row, column) === 2) {
+    } else if(this._countLiveNeighbours(row, column) === 2 && cell === 1) {
       this.nextGrid[row][column]=1;
     } else {
       this.nextGrid[row][column]=0;
