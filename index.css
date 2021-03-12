@@ -1,0 +1,23 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+#heading {
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding-top: 10px;
+}
+#container {
+  padding: 10px;
+  
+}
+#grid {
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  border-spacing: 0px;
+}
+td {
+  border: 1px solid rgb(185, 185, 185);
+  width: 10px;
+  height: 10px;
+}
