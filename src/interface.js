@@ -2,7 +2,7 @@ const height = 30;
 const width = 85;
 let startingGrid = [height];
 
-function createStartingGrid() {
+function createStartingGridArray() {
   for (let row = 0; row < height; row++) {
     startingGrid[row] = new Array(width);
   }
@@ -16,7 +16,7 @@ function createStartingGrid() {
 function makeGrid() {
   let container = document.querySelector('#container');
   let grid = document.createElement('table');
-  grid.setAttribute('id','grid');
+  grid.setAttribute('id', 'grid');
   for (let row = 0; row < height; row++) {
     let tr = document.createElement('tr');
     for (let column = 0; column < width; column++) {
@@ -49,7 +49,8 @@ function updateUI(grid) {
   for(let row=0; row<height; row++) {
     for(let column=0; column<width; column++) {
       let cell = document.getElementById(`${row}_${column}`)
-      if((grid[row][column] === 1 && cell.getAttribute('class') === 'dead') || (grid[row][column] === 0 && cell.getAttribute('class') === 'alive')) {
+      if((grid[row][column] === 1 && cell.getAttribute('class') === 'dead') || 
+      (grid[row][column] === 0 && cell.getAttribute('class') === 'alive')) {
         cell.click();
       } 
     }
@@ -64,5 +65,5 @@ function evolve(){
 
 window.onload=()=>{
   makeGrid();
-  createStartingGrid();
+  createStartingGridArray();
 }

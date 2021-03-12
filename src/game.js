@@ -42,7 +42,8 @@ class Game {
     let liveNeighbours = 0;
     for(let row=(y-1); row<=(y+1); row++) {
       for(let column=(x-1); column<=(x+1); column++ ) {
-        if(row>=0 && column>=0 && column<=this.width-1 && row<=this.height-1 && (row!==y || column!==x)) {
+        if(row>=0 && column>=0 && column<=this.width-1 && row<=this.height-1 && 
+          (row!==y || column!==x)) {
           liveNeighbours += this.startingGrid[row][column]
         }
       }
@@ -77,9 +78,8 @@ class Game {
 
   _updateCell(row, column) {
     let cell = this.startingGrid[row][column]
-    if(this._countLiveNeighbours(row, column) === 3) {
-      this.nextGrid[row][column]=1;
-    } else if(this._countLiveNeighbours(row, column) === 2 && cell === 1) {
+    if(this._countLiveNeighbours(row, column) === 3 || 
+    (this._countLiveNeighbours(row, column) === 2 && cell === 1)) {
       this.nextGrid[row][column]=1;
     } else {
       this.nextGrid[row][column]=0;
