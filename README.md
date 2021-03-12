@@ -69,3 +69,6 @@ Below is a demostration of the app in action. The screenshots show the first, se
 ![example iteration 3](./images/GoL-iteration-3.png)
 ![example iteration 10](./images/GoL-iteration-10.png)
 
+### References
+I referred to [this](https://javascript.plainenglish.io/the-game-of-life-using-javascript-fc1aaec8274f) blog for guidance in creating the UI.
+
