@@ -54,6 +54,14 @@ describe("Game", function() {
       game.tick()
       expect(game.startingGrid[8][5]).toEqual(0)
     });
+    it("keeps updating correctly when called multiple times", function() {
+      let game = new Game([[0,0,0],[1,1,1],[0,0,0]])
+      game.tick()
+      expect(game.startingGrid).toEqual([[0,1,0],[0,1,0],[0,1,0]])
+      game.tick()
+      expect(game.startingGrid).toEqual([[0,0,0],[1,1,1],[0,0,0]])
+      game.tick()
+      expect(game.startingGrid).toEqual([[0,1,0],[0,1,0],[0,1,0]])
+    });
   });
-
 });

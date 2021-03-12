@@ -35,7 +35,7 @@ class Game {
         this._updateCell(row, column)
       }
     }
-    this._updateStartingGrid()
+    this._updateGrids()
   }
 
   _countLiveNeighbours(y, x) {
@@ -70,8 +70,9 @@ class Game {
     this._fillArrayWithZeros()
   }
 
-  _updateStartingGrid() {
+  _updateGrids() {
     this.startingGrid = this.nextGrid.slice(0)
+    this._setNextGrid()
   }
 
   _updateCell(row, column) {
